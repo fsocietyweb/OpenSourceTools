@@ -2,8 +2,8 @@
 
 Open Source Tools we Made and Sorted
 
-<a href="https://github.com/fsocietyweb/Learn-These-Languages/tree/main/IDE">IDE's</a><br>
-<a href="https://github.com/fsocietyweb/Learn-These-Languages/tree/main/Randomizers">Randomizers</a><br>
-<a href="https://github.com/fsocietyweb/Learn-These-Languages/tree/main/Keyloggers">KeyLoggers</a><br>
-<a href="https://github.com/fsocietyweb/Learn-These-Languages/tree/main/Fun-Tools">Fun Tools</a><br>
-<a href="https://github.com/fsocietyweb/Learn-These-Languages/tree/main/Simulations">Simulations</a>
+<a href="/IDE">IDE's</a><br>
+<a href="/Randomizers">Randomizers</a><br>
+<a href="/Keyloggers">KeyLoggers</a><br>
+<a href="/Fun-Tools">Fun Tools</a><br>
+<a href="/Simulations">Simulations</a>
