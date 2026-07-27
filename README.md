@@ -7,3 +7,4 @@ Open Source Tools we Made and Sorted
 <a href="/Keyloggers">KeyLoggers</a><br>
 <a href="/Fun-Tools">Fun Tools</a><br>
 <a href="/Simulations">Simulations</a>
+<a href="/Games">Games</a>
