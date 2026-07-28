@@ -13,4 +13,4 @@ Open Source Tools we Made and Sorted
 # C/C++ Open Source Tools
 
 <a href="/C">C/C++</a><br>
-<a href="/KDE\ Web\ Browser">KDE Browser</a>
+<a href="/KDE Web Browser">KDE Browser</a>
