@@ -115,8 +115,37 @@ class Install_Programm(Tool):
         
         else:
             print("Your package manager is not supported")
-        
 
+
+class Update_System(Tool):
+    def __init__(self):
+        super().__init__("Update System")
+    
+    def run(self):
+        distro = platform.freedesktop_os_release()
+
+        if shutil.which("apt"):
+            os.system("sudo apt update && sudo apt upgrade")
+            print(f"Dein System:{distro["ID"]} wurde geupdatet")
+        
+        elif shutil.which("dnf"):
+            os.system("sudo dnf upgrade --refresh")
+            print(f"Dein System:{distro["ID"]} wurde geupdatet")
+        
+        elif shutil.which("pacman"):
+            os.system("sudo pacman -Syu")
+            print(f"Dein System:{distro["ID"]} wurde geupdatet")
+
+        elif shutil.which("zypper"):
+            os.system("sudo zypper update")
+            print(f"Dein System:{distro["ID"]} wurde geupdatet")
+
+        elif shutil.which("apk"):
+            os.system("sudo apk update && sudo apk upgrade")
+            print(f"Dein System:{distro["ID"]} wurde geupdatet")
+
+        else:
+            print("Dein Package manager wird nicht unterstützt")    
 
 
 while True:
@@ -127,7 +156,8 @@ while True:
     print("4. Discord")
     print("5. Genrate UUID")
     print("6. Install a Programm")
-    print("7. Exit")
+    print("7. Update your System")
+    print("8. Exit")
 
     try:
         choice = int(input("> "))
@@ -157,6 +187,10 @@ while True:
     
     elif choice == 6:
         tool = Install_Programm()
+        tool.run()
+    
+    elif choice == 7:
+        tool = Update_System()
         tool.run()
     
     else:
