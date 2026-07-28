@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KWeb Home</title>
+    <style>
+        :root {
+            --bg-color: #171a1f;
+            --container-bg: #20242c;
+            --accent-blue: #3daee9;
+            --accent-green: #2ecc71;
+            --text-main: #eff0f1;
+            --text-muted: #76797c;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Noto Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1 {
+            color: var(--accent-blue);
+            font-size: 5rem;
+            margin: 0;
+            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(61, 174, 233, 0.25);
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin: 10px 0 40px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Suchleiste */
+        .search-container {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 16px 25px;
+            background-color: var(--container-bg);
+            border: 2px solid #31363b;
+            border-radius: 30px;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-bar:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(61, 174, 233, 0.2);
+            background-color: #232831;
+        }
+
+        /* Kacheln / Grid-System */
+        .grid-title {
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            text-align: center;
+        }
+
+        .shortcut-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .shortcut-card {
+            background-color: var(--container-bg);
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 5px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .shortcut-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            background-color: #252a33;
+        }
+
+        .icon {
+            font-size: 2rem;
+        }
+
+        .card-name {
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #252a33;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        .author {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>KWeb</h1>
+        <div class="subtitle">Secure KDE Browsing Environment</div>
+
+        <div class="search-container">
+            <form id="searchForm" onsubmit="return doSearch(event)">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Secure Web Search" autofocus autocomplete="off">
+            </form>
+        </div>
+
+        <div class="grid-title">Shortcuts</div>
+        <div class="shortcut-grid">
+            <a href="https://www.google.com" class="shortcut-card">
+                <span class="icon">🔍</span>
+                <span class="card-name">Google</span>
+            </a>
+            <a href="https://github.com" class="shortcut-card">
+                <span class="icon">💻</span>
+                <span class="card-name">GitHub</span>
+            </a>
+            <a href="https://distrowatch.com" class="shortcut-card">
+                <span class="icon">💿</span>
+                <span class="card-name">DistroWatch</span>
+            </a>
+            <a href="https://kde.org" class="shortcut-card">
+                <span class="icon">🦎</span>
+                <span class="card-name">KDE</span>
+            </a>
+            <a href="https://youtube.com/" class="shortcut-card">
+                <span class="icon">▶️</span>
+                <span class="card-name">Youtube</span>
+            </a>
+            <a href="https://fsocietyweb.github.io/101street.html/" class="shortcut-card">
+                <span class="icon">🗂️</span>
+                <span class="card-name">Techx32's Page</span>
+            </a>
+            <a href="https://discord.com" class="shortcut-card">
+                <span class="icon">🗨️</span>
+                <span class="card-name">Discord</span>
+            </a>
+            <a href="https://frutigeraeroarchive.org/" class="shortcut-card">
+                <span class="icon">🫧</span>
+                <span class="card-name">Frutiger Aero Archive</span>
+            </a>
+            <a href="#" onclick="alert('Klicke oben in der Leiste auf 💬 Chat, um den sicheren KWeb Messenger zu starten!')" class="shortcut-card" style="border-color: var(--accent-green);">
+                <span class="icon">💬</span>
+                <span class="card-name" style="color: var(--accent-green);">KWeb Chat</span>
+            </a>
+        </div>
+
+        <footer>
+            Built for Privacy • Core: <span class="author">C++ & Qt6</span> • Made by <span class="author">FS_Techx32</span>
+        </footer>
+    </div>
+
+    <script>
+        function doSearch(event) {
+            event.preventDefault();
+            const input = document.getElementById('searchInput').value.trim();
+            if (!input) return false;
+
+            // Wenn es eine URL ist, direkt ansteuern, ansonsten über Google suchen
+            if (input.includes('.') && !input.includes(' ')) {
+                let url = input;
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    url = 'https://' + url;
+                }
+                window.location.href = url;
+            } else {
+                window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(input);
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
