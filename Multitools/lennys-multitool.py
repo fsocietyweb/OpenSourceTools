@@ -113,6 +113,10 @@ class Install_Programm(Tool):
             os.system(f"sudo apk add {programm}")
             print(f"{programm} succesfully installed")
         
+        elif shutil.which("xbps"):
+            os.system(f"sudo xbps-install {programm}")
+            print(f"{programm} wurde installiert")
+        
         else:
             print("Your package manager is not supported")
 
@@ -142,6 +146,10 @@ class Update_System(Tool):
 
         elif shutil.which("apk"):
             os.system("sudo apk update && sudo apk upgrade")
+            print(f"Dein System:{distro["ID"]} wurde geupdatet")
+        
+        elif shutil.which("xbps"):
+            os.system("sudo xbps-install -Su")
             print(f"Dein System:{distro["ID"]} wurde geupdatet")
 
         else:
