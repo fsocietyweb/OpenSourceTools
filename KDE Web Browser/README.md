@@ -13,3 +13,5 @@ make
 
 
 3. Enjoy! and Customize it how you want Fork it so You can Add your Version Of it
+
+Info: May have some bugs
